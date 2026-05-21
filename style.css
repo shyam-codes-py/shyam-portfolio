@@ -215,3 +215,11 @@ footer { width: 100%; padding: 2.5rem 5%; background: var(--glass-bg); border-to
         width: auto;
     }
 }
+
+/* GSAP animation jab chal jaye, toh buttons ko zabardsati screen pe rakhne ke liye */
+.hero-buttons .cyber-btn {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, !important;
+}
