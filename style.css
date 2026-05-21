@@ -195,3 +195,23 @@ footer { width: 100%; padding: 2.5rem 5%; background: var(--glass-bg); border-to
     .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
     .modal-buttons { flex-direction: column; }
 }
+
+@media (max-width: 768px) {
+    /* Navbar ko center karne ke liye */
+    nav {
+        display: flex;
+        flex-direction: column; /*Options ek ke nechee aayenge */
+        align-items: center; /* ekdum center mein alignment */
+        justify-content: center; 
+        width: 100%;
+        gap: 15px; /* Beech main thoda space */
+        padding: 20px 0; /* Upar se thoda jagah */
+        position: relative; /* taaki neeche ke boxes ke upar na chadhe */
+    }
+    /* Agar tumhare menu links kisi class ya ul/li mein hain, toh unko bhi center karo */
+    nav a, .nav-links a {
+        text-align: center; 
+        display: block;
+        width: auto;
+    }
+}
