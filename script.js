@@ -1,5 +1,17 @@
 window.addEventListener('load', () => {
-    // Boot sequence animation (Hero Section)
+    
+    // 1. FIX: GSAP Animations ko turant load karo, par start hone mein 3 sec ka 'delay' do
+    if (typeof gsap !== "undefined") {
+        const tl = gsap.timeline({ delay: 3 }); // 3 second baad aayenge buttons
+        tl.from(".main-title", {y: 50, opacity: 0, duration: 1, ease: "power3.out"})
+          .from(".subtitle", {y: 30, opacity: 0, duration: 0.8, ease: "power3.out"}, "-=0.6")
+          .from(".hero-buttons .cyber-btn", {y: 20, opacity: 0, duration: 0.5, stagger: 0.2, ease: "power2.out"}, "-=0.4");
+          
+        // Scroll animations ko bhi bina timeout ke turant set kar do
+        initGSAPScrollAnimations();
+    }
+
+    // 2. Tumhara baaki Boot sequence logic (System Online, Red to Green dot)
     setTimeout(() => {
         const sysDot = document.getElementById('sys-dot');
         if(sysDot) { sysDot.classList.remove('red'); sysDot.classList.add('green'); }
@@ -19,17 +31,6 @@ window.addEventListener('load', () => {
             if(coreText) coreText.style.display = 'none';
             const profileImg = document.getElementById('profile-img');
             if(profileImg) profileImg.classList.add('show');
-
-            // 🚀 HERO ENTRANCE ANIMATION via GSAP Timeline
-            if (typeof gsap !== "undefined") {
-                const tl = gsap.timeline();
-                tl.from(".main-title", {y: 50, opacity: 0, duration: 1, ease: "power3.out"})
-                  .from(".subtitle", {y: 30, opacity: 0, duration: 0.8, ease: "power3.out"}, "-=0.6")
-                  .from(".hero-buttons .cyber-btn", {y: 20, opacity: 0, duration: 0.5, stagger: 0.2, ease: "power2.out"}, "-=0.4");
-            }
-
-            initGSAPScrollAnimations();
-
         }, 500); 
         
     }, 2500); 
