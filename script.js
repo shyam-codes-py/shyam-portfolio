@@ -204,3 +204,4 @@ if(contactForm && successMsg) {
         .then(() => { setTimeout(() => { successMsg.classList.remove('show-msg'); }, 4000); });
     });
 }
+
