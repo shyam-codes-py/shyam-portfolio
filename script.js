@@ -121,22 +121,48 @@ tiltCards.forEach(card => {
     });
 });
 
-// Modal Logic (Now targeting perfectly structured buttons)
+// 🚀 WORKING MODAL BUTTONS LOGIC
 const modal = document.getElementById('project-modal');
 const viewBtns = document.querySelectorAll('.view-btn');
 const closeBtn = document.querySelector('.close-btn');
 const modalTitle = document.getElementById('modal-title');
-if(modal && modalTitle) {
+
+if (modal && modalTitle) {
+    // Modal ke andar wale dono anchors/buttons ko sahi se pakdo
+    const modalButtons = modal.querySelectorAll('.modal-buttons a');
+    const githubBtn = modalButtons[0];
+    const liveBtn = modalButtons[1];
+
     viewBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.preventDefault(); 
-            modalTitle.innerText = e.target.closest('.project-card').querySelector('h3').innerText;
-            modal.classList.add('show-modal'); 
-            document.body.style.overflow = 'hidden'; 
+            e.preventDefault();
+            
+            const currentCard = e.target.closest('.project-card');
+            modalTitle.innerText = currentCard.querySelector('h3').innerText;
+            
+            // Card se asli links nikalenge
+            const githubLink = e.target.getAttribute('data-github') || '#';
+            const liveLink = e.target.getAttribute('data-live') || '#';
+            
+            // Modal ke andar links chipkayenge aur unhe target="_blank" denge
+            if (githubBtn) {
+                githubBtn.setAttribute('href', githubLink);
+                githubBtn.setAttribute('target', '_blank');
+                githubBtn.setAttribute('rel', 'noopener noreferrer');
+            }
+            if (liveBtn) {
+                liveBtn.setAttribute('href', liveLink);
+                liveBtn.setAttribute('target', '_blank');
+                liveBtn.setAttribute('rel', 'noopener noreferrer');
+            }
+            
+            modal.classList.add('show-modal');
+            document.body.style.overflow = 'hidden';
         });
     });
+    
     const closeModal = () => { modal.classList.remove('show-modal'); document.body.style.overflow = ''; };
-    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
     window.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('show-modal')) closeModal(); });
 }
