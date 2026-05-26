@@ -1,27 +1,21 @@
 :root {
-    /* 🌙 PURE DARK CYBERPUNK BASE */
     --bg-color: #0a0510;
     --text-main: #ffffff;
     --text-muted: rgba(255, 255, 255, 0.6);
     --glass-bg: rgba(255, 255, 255, 0.02);
     --glass-border: rgba(255, 255, 255, 0.05);
     --orb-bg: #000000;
-
-    /* Default Color: Cyber Blue */
     --primary: #00d2ff;
     --primary-glow: rgba(0, 210, 255, 0.5);
-
     --font-mono: 'Space Mono', monospace;
     --font-title: 'Rajdhani', sans-serif;
 }
 
-/* 🎨 PREMIUM NEON THEME COLORS */
-body.theme-blue { --primary: #00d2ff; --primary-glow: rgba(0, 210, 255, 0.5); }
+body.theme-blue  { --primary: #00d2ff; --primary-glow: rgba(0, 210, 255, 0.5); }
 body.theme-green { --primary: #00ff66; --primary-glow: rgba(0, 255, 102, 0.5); }
-body.theme-orange { --primary: #ff5e00; --primary-glow: rgba(255, 94, 0, 0.5); }
-body.theme-purple { --primary: #d500f9; --primary-glow: rgba(213, 0, 249, 0.5); }
+body.theme-orange{ --primary: #ff5e00; --primary-glow: rgba(255, 94, 0, 0.5); }
+body.theme-purple{ --primary: #d500f9; --primary-glow: rgba(213, 0, 249, 0.5); }
 
-/* Global Utilities */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 ::selection { background-color: var(--primary); color: #000000; }
@@ -39,9 +33,6 @@ body {
     overflow-x: hidden;
 }
 
-/* =========================================
-   ULTIMATE CONTROL PILL (Colors Only)
-   ========================================= */
 .theme-control-panel {
     position: fixed;
     left: 20px;
@@ -56,19 +47,15 @@ body {
     transition: transform 0.3s ease, border-color 0.5s ease;
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
 }
-
 .theme-control-panel:hover { transform: translateY(-3px); border-color: var(--primary); box-shadow: 0 10px 40px var(--primary-glow); }
-
 .color-options { display: flex; gap: 12px; }
 .color-btn { width: 18px; height: 18px; border-radius: 50%; cursor: pointer; border: none; transition: transform 0.2s, box-shadow 0.2s; }
 .color-btn:hover { transform: scale(1.4); }
-
-.theme-blue-btn { background: #00d2ff; box-shadow: 0 0 10px #00d2ff; }
-.theme-green-btn { background: #00ff66; box-shadow: 0 0 10px #00ff66; }
+.theme-blue-btn   { background: #00d2ff; box-shadow: 0 0 10px #00d2ff; }
+.theme-green-btn  { background: #00ff66; box-shadow: 0 0 10px #00ff66; }
 .theme-orange-btn { background: #ff5e00; box-shadow: 0 0 10px #ff5e00; }
 .theme-purple-btn { background: #d500f9; box-shadow: 0 0 10px #d500f9; }
 
-/* Global Glass Panel Class */
 .glass-panel {
     background: var(--glass-bg);
     backdrop-filter: blur(12px);
@@ -79,32 +66,24 @@ body {
     transition: border-color 0.5s ease;
 }
 
-/* =========================================
-   TOP TERMINAL NAVIGATION
-   ========================================= */
 .top-bar { display: flex; justify-content: space-between; padding: 1.5rem 5%; align-items: center; position: sticky; top: 0; z-index: 100; background: var(--glass-bg); backdrop-filter: blur(10px); border-bottom: 1px solid var(--glass-border); transition: 0.5s; }
 .system-status { display: flex; gap: 12px; flex-wrap: wrap; }
 .status-pill { font-family: var(--font-mono); font-size: 0.7rem; padding: 6px 14px; border: 1px solid var(--glass-border); border-radius: 4px; display: flex; align-items: center; gap: 8px; color: var(--text-muted); background: var(--glass-bg); letter-spacing: 1px; transition: 0.5s; }
 .dot { width: 7px; height: 7px; border-radius: 50%; }
-.dot.red { background: #ff3366; box-shadow: 0 0 10px #ff3366; }
+.dot.red   { background: #ff3366; box-shadow: 0 0 10px #ff3366; }
 .dot.green { background: #00ffcc; box-shadow: 0 0 10px #00ffcc; }
-
 .cyber-nav { display: flex; gap: 20px; }
 .nav-link { color: var(--text-muted); text-decoration: none; font-family: var(--font-mono); font-size: 0.85rem; font-weight: bold; letter-spacing: 1px; transition: 0.3s; }
 .nav-link:hover { color: var(--primary); text-shadow: 0 0 15px var(--primary-glow); }
 
-/* =========================================
-   HERO SECTION & ORB
-   ========================================= */
 .hero-section { display: flex; justify-content: space-between; align-items: center; padding: 0 10%; min-height: 90vh; }
 .hero-content { max-width: 600px; }
 .main-title { font-size: 4.5rem; line-height: 1.1; font-weight: 700; margin-bottom: 1rem; color: var(--text-main); letter-spacing: -1px; }
 .subtitle { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.6; }
 .live-status { font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-muted); letter-spacing: 1px; }
 .accent-text { color: var(--primary); text-shadow: 0 0 12px var(--primary-glow); font-weight: bold; transition: color 0.3s, text-shadow 0.3s; }
-
 .hero-buttons { display: flex; gap: 15px; flex-wrap: wrap; margin-top: 25px; }
-.cyber-btn { display: inline-flex; align-items: center; padding: 12px 24px; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; font-family: var(--font-mono); font-weight: bold; background: var(--glass-bg); transition: 0.3s; border-radius: 4px; letter-spacing: 1px; }
+.cyber-btn { display: inline-flex; align-items: center; padding: 12px 24px; border: 1px solid var(--primary); color: var(--primary); text-decoration: none; font-family: var(--font-mono); font-weight: bold; background: var(--glass-bg); transition: 0.3s; border-radius: 4px; letter-spacing: 1px; cursor: pointer; }
 .cyber-btn i { margin-right: 8px; font-size: 1.1rem; }
 .cyber-btn:hover { background: var(--primary); color: var(--bg-color); box-shadow: 0 0 25px var(--primary-glow); transform: translateY(-3px); }
 
@@ -118,9 +97,6 @@ body {
 #profile-img { width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1s ease; position: absolute; filter: contrast(1.1); }
 #profile-img.show { opacity: 1; }
 
-/* =========================================
-   SECTIONS & CARDS 
-   ========================================= */
 #about, #skills, #projects, #contact { padding: 6rem 10%; text-align: center; }
 .section-title { font-size: 2.5rem; margin-bottom: 3.5rem; color: var(--text-main); font-family: var(--font-mono); letter-spacing: 2px; }
 
@@ -134,10 +110,11 @@ body {
 .skill-card p, .project-card p { color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
 .skill-card:hover, .project-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 15px 35px var(--primary-glow); }
 
+.project-status { font-family: var(--font-mono); font-size: 0.7rem; color: #00ffcc; letter-spacing: 2px; margin-bottom: 1rem; }
+
 .progress-container { width: 100%; height: 6px; background: var(--glass-border); border-radius: 5px; margin-top: 15px; overflow: hidden; }
 .progress-bar { height: 100%; width: 0; background: var(--primary); border-radius: 5px; transition: width 1.5s ease-in-out; box-shadow: 0 0 10px var(--primary); }
 
-/* Forms */
 .contact-container { max-width: 650px; margin: 0 auto; padding: 3rem; }
 form { display: flex; flex-direction: column; gap: 2rem; }
 .input-group { position: relative; width: 100%; }
@@ -145,11 +122,11 @@ form { display: flex; flex-direction: column; gap: 2rem; }
 .input-group label { position: absolute; left: 1.2rem; top: 50%; transform: translateY(-50%); color: var(--text-muted); font-family: var(--font-mono); pointer-events: none; transition: 0.3s; letter-spacing: 1px; }
 .input-group textarea ~ label { top: 1.6rem; }
 .input-group input:focus, .input-group textarea:focus { border-color: var(--primary); box-shadow: 0 0 15px var(--primary-glow); }
-.input-group input:focus ~ label, .input-group input:valid ~ label, .input-group textarea:focus ~ label, .input-group textarea:valid ~ label { top: 10px; font-size: 0.75rem; color: var(--primary); font-weight: bold; }
+.input-group input:focus ~ label, .input-group input:valid ~ label,
+.input-group textarea:focus ~ label, .input-group textarea:valid ~ label { top: 10px; font-size: 0.75rem; color: var(--primary); font-weight: bold; }
 #success-msg { color: #00ffcc; font-weight: bold; margin-top: 1rem; opacity: 0; transition: 0.3s; }
 #success-msg.show-msg { opacity: 1; }
 
-/* Footer */
 footer { width: 100%; padding: 2.5rem 5%; background: var(--glass-bg); border-top: 1px solid var(--glass-border); margin-top: 60px; }
 .footer-content { display: flex; justify-content: space-between; align-items: center; width: 100%; max-width: 1200px; margin: 0 auto; flex-wrap: wrap; gap: 20px; }
 .footer-left { display: flex; gap: 12px; }
@@ -159,30 +136,24 @@ footer { width: 100%; padding: 2.5rem 5%; background: var(--glass-bg); border-to
 .footer-right p { color: var(--text-muted); font-family: var(--font-mono); }
 .heart { color: #ff3366; animation: heartbeat 1.5s infinite; display: inline-block; }
 
-/* =========================================
-   FIXED MODAL VIEW
-   ========================================= */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 100000; opacity: 0; visibility: hidden; transition: 0.3s; }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100vh; background: rgba(0,0,0,0.85); backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; z-index: 100000; opacity: 0; visibility: hidden; transition: 0.3s; }
 .modal-overlay.show-modal { opacity: 1; visibility: visible; }
 .modal-content { width: 90%; max-width: 550px; padding: 3rem; text-align: center; border-color: var(--primary); transform: translateY(-30px); transition: 0.3s; position: relative; box-shadow: 0 0 30px var(--primary-glow); }
 .modal-overlay.show-modal .modal-content { transform: translateY(0); }
 .close-btn { position: absolute; top: 15px; right: 20px; font-size: 2rem; color: var(--text-muted); cursor: pointer; transition: 0.3s; }
-.close-btn:hover { color: var(--red-neon, #ff3366); text-shadow: 0 0 10px #ff3366; }
+.close-btn:hover { color: #ff3366; text-shadow: 0 0 10px #ff3366; }
 .modal-content h3 { color: var(--primary); margin-bottom: 1.5rem; font-family: var(--font-mono); font-size: 2rem; }
 .modal-content p { color: var(--text-muted); margin-bottom: 2.5rem; line-height: 1.7; font-size: 1.1rem; }
-
-/* Specific Container for Modal Buttons */
 .modal-buttons { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 15px; }
 
-/* Utils */
 #scroll-progress { position: fixed; top: 0; left: 0; width: 0%; height: 4px; background: var(--primary); z-index: 10000; transition: width 0.1s ease-out; box-shadow: 0 0 12px var(--primary-glow); }
 #scroll-top { position: fixed; bottom: 30px; right: -60px; width: 45px; height: 45px; border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 1.5rem; color: var(--bg-color); cursor: pointer; z-index: 999; transition: 0.3s; background: var(--primary); box-shadow: 0 0 20px var(--primary-glow); border: 1px solid var(--primary); }
 #scroll-top.show-btn { right: 30px; }
 #scroll-top:hover { transform: scale(1.1); background: transparent; color: var(--primary); }
 
 #typing-text::after { content: '_'; color: var(--primary); animation: blink 1s infinite; text-shadow: 0 0 5px var(--primary-glow); }
-@keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
-@keyframes spin { 100% { transform: rotate(360deg); } }
+@keyframes blink     { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+@keyframes spin      { 100% { transform: rotate(360deg); } }
 @keyframes spin-reverse { 100% { transform: rotate(-360deg); } }
 @keyframes heartbeat { 0%, 28%, 70% { transform: scale(1); } 14%, 42% { transform: scale(1.2); } }
 
@@ -194,33 +165,13 @@ footer { width: 100%; padding: 2.5rem 5%; background: var(--glass-bg); border-to
     .about-container { flex-direction: column; padding: 2rem 1.5rem; gap: 2rem; }
     .footer-content { flex-direction: column; text-align: center; gap: 1.5rem; }
     .modal-buttons { flex-direction: column; }
+    nav { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; gap: 15px; padding: 20px 0; position: relative; }
+    nav a, .nav-links a { text-align: center; display: block; width: auto; }
 }
 
-@media (max-width: 768px) {
-    /* Navbar ko center karne ke liye */
-    nav {
-        display: flex;
-        flex-direction: column; /*Options ek ke nechee aayenge */
-        align-items: center; /* ekdum center mein alignment */
-        justify-content: center; 
-        width: 100%;
-        gap: 15px; /* Beech main thoda space */
-        padding: 20px 0; /* Upar se thoda jagah */
-        position: relative; /* taaki neeche ke boxes ke upar na chadhe */
-    }
-    /* Agar tumhare menu links kisi class ya ul/li mein hain, toh unko bhi center karo */
-    nav a, .nav-links a {
-        text-align: center; 
-        display: block;
-        width: auto;
-    }
-}
-
-/* GSAP animation jab chal jaye, toh buttons ko zabardsati screen pe rakhne ke liye */
 .hero-buttons .cyber-btn {
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
-    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease, !important;
+    transition: background 0.3s ease, color 0.3s ease, box-shadow 0.3s ease !important;
 }
-
